@@ -8,13 +8,13 @@ Toggle between light and dark modes for comfortable viewing.
 ## Technologies Used
 HTML, CSS for building the user interface.
 JavaScript for fetching data from the API and handling interactions.
-Usage
+## Usage
 Open the index.html file in a web browser.
 Enter the name of a meal in the search box and click the "Search" button.
 Browse through the displayed meal options.
 Click the "Details" button to view instructions for a selected meal.
 Toggle light/dark mode using the "Toggle Light/Dark Mode" button.
-Credits
+## Credits
 Meal data and images retrieved from themealdb.com.
 Live Demo
 View Live Demo
