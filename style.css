@@ -1,0 +1,261 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.main{
+    background-color: rgb(16, 16, 16);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    transition: all 1s ease-in-out;
+    padding: 20px;
+}
+.main.main-light{
+    background-color: #fff;
+}
+.light-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: #3e3e3e;
+    box-shadow: -1px 0px 20px #2c2c2c inset;
+    position: absolute;
+    right: 1%;
+    top: 20px;
+}
+.light-container span{
+    color: #FFF;
+    font-size: 14px;
+}
+.light-container .ball-container
+{
+    width: 40px;
+    background-color: #787878;
+    height: 15px;
+    border-radius: 30px;
+    margin: 0 10px;
+    position: relative;
+}
+.light-container .ball
+{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ffe100;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.light-container .off{
+    color: #ffe100;
+}
+.ball-active .on{
+    color: #ffe100;
+}
+.ball-active .off{
+    color: #fff;
+}
+.ball-active .ball{
+    right: 0;
+    left: auto;
+}
+
+.main h1{
+    position: absolute;
+    top:40%;
+    color: #ffe100;
+    font-size: 50px;
+}
+.search-part{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    margin: 10px 0;
+    position: absolute;
+    top:70%;
+}
+.search-part input{
+    width: 100%;
+    min-width: 200px;
+    color: #FFF;
+    background-color:rgb(61, 60, 60) ;
+    border: none;
+    font-size: 16px;
+    padding: 0 20px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.search-part input::placeholder{
+    color: #8c8c8c;
+    font-size: 16px;
+}
+.search-part input:focus{
+    outline: none;
+}
+.search-part button{
+    border: none;
+    color: #FFF;
+    background-color: #ffe100;
+    padding: 10px 30px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+.result{
+    width: 100%;
+    height:100%;
+    text-align: center;
+    margin-top: 100px !important;
+
+}
+.false-data{
+    color: #ffe100;
+    font-size: 26px;
+}
+.card{
+    background-color: inherit !important;
+    text-align: center;
+    border: 1px solid #ffe100 !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+.card.active::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -13%;
+    width: 64%;
+    height: 100%;
+    background-color: #ffe100;
+    z-index: 2;
+    transform: skewX(10deg);
+    animation: to-left 1s ease-in-out forwards;
+}
+.card.active::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -13%;
+    width: 64%;
+    height: 100%;
+    background-color: #ffe100;
+    z-index: 2;
+    transform: skewX(10deg);
+    animation: to-left 1s ease-in-out forwards;
+}
+.details-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    z-index: 3;
+    width: 80%;
+    opacity: 0;
+    animation: appear 1s ease-in-out 1s forwards;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    color: #ffe100;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    cursor: pointer;
+    opacity: 0;
+    animation: appear 1s ease-in-out 2s forwards;
+}
+.card img{
+    max-width: 100%;
+}
+.card .meal-discription{
+    padding: 20px 0;
+}
+.card .meal-discription .meal-name{
+    font-size: 18px;
+    color: #FFF;
+    padding: 10px 0;
+}
+.card .meal-discription button{
+    color: black;
+    background-color: #ffe100;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+@media (max-width:767px) {
+    .main h1{
+        text-align: center;
+    }
+    .main input {
+        min-width: 150px;
+    }
+
+}
+@keyframes to-left{
+    from{
+        width:0;
+    }
+    to{
+        width:64%;
+    }
+}
+@keyframes to-rigth{
+    from{
+        width:64%;
+    }
+    to{
+        width:0;
+    }
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes disappear{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+@keyframes go-to-up{
+    0%{
+        top: 70%;
+        margin-left: 0;
+    }
+    50%{
+        top:0;
+    }
+    100%{
+        top:0;
+        left: 0;
+        margin-left: 40px;
+    }
+}
+
+
