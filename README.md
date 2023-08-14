@@ -16,5 +16,5 @@ Click the "Details" button to view instructions for a selected meal.
 Toggle light/dark mode using the "Toggle Light/Dark Mode" button.
 ## Credits
 Meal data and images retrieved from themealdb.com.
-Live Demo
-View Live Demo
+## Live Demo
+[View Live Demo](https://mohammedsalhyen.github.io/Meal-Display-Interface/)
